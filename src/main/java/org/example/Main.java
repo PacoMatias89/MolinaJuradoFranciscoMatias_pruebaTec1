@@ -307,7 +307,7 @@ public class Main {
 
     public static String validateName(String name) {
         while (true) {
-            if (name != null &&  !name.isEmpty() && !name.matches(".*\\d.*")) {
+            if (name != null &&  !name.isEmpty() && !name.matches(".*\\d.*") && !name.isBlank()) {
                 return name;
             } else {
 
@@ -321,7 +321,7 @@ public class Main {
 
     public static String validateLastName(String lastName) {
         while (true) {
-            if (lastName != null && !lastName.isEmpty() && !lastName.matches(".*\\d.*")) {
+            if (lastName != null && !lastName.isEmpty() && !lastName.matches(".*\\d.*") &&!lastName.isBlank()) {
                 return lastName;
             } else {
 
@@ -333,10 +333,9 @@ public class Main {
         }
     }
 
-
     public static String validateJobTitle(String jobTitle) {
         while (true) {
-            if (jobTitle != null && !jobTitle.isEmpty() && !jobTitle.matches(".*\\d.*")) {
+            if (jobTitle != null && !jobTitle.isEmpty() && !jobTitle.matches(".*\\d.*") &&!jobTitle.isBlank()) {
                 return jobTitle;
             } else {
                 Scanner scanner = new Scanner(System.in);
