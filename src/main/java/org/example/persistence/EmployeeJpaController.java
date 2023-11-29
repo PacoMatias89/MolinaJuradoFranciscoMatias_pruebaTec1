@@ -53,8 +53,8 @@ public class EmployeeJpaController {
     public Employee updateEmployee(Employee employee) {
         EntityManager manager = null;
         try {
-            manager = getEntityManager(); //We open transaction manager
-            manager.getTransaction().begin();
+            manager = getEntityManager();
+            manager.getTransaction().begin();//We open transaction manager
             return manager.merge(employee);
         } catch (RuntimeException e) {
             JOptionPane.showConfirmDialog(null, "User could not be updated succesfully", "Error", JOptionPane.ERROR_MESSAGE);
@@ -112,8 +112,8 @@ public class EmployeeJpaController {
         List<Employee> employees = null;
         try {
 
-            manager = getEntityManager(); //We open transaction manager
-            manager.getTransaction().begin();
+            manager = getEntityManager();
+            manager.getTransaction().begin();//We open transaction manager
             employees = manager.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();//Returns the list of employees
             manager.getTransaction().commit();// We close transaction manager
 
